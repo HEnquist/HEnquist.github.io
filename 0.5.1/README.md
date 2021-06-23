@@ -166,6 +166,7 @@ The easiest way to install CamillaDSP is to download a pre-built binary. Binarie
 These are compressed files containing a single executable file that is ready to run. 
 
 The following configurations are provided:
+
 | Filename | Description | Backends |
 |----------|-------------|----------|
 | `camilladsp-linux-amd64.tar.gz` | Linux on 64-bit Intel or AMD CPU | Alsa, Pulseaudio |
@@ -385,6 +386,7 @@ These will __NOT__ work:
 
 ## Exit codes
 These are the exit codes CamillaDSP will give:
+
 | Exit code | Meaning |
 | --------- | ------- |
 | 0         | Normal exit, no error |
@@ -607,6 +609,7 @@ devices:
     * FLOAT64LE - 64-bit float, stored as eight bytes
 
     Supported formats:
+
     |            | Alsa               | Pulse              | Wasapi             | CoreAudio          | Jack               | File/Stdin/Stdout  |
     |------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
     | S16LE      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: |
@@ -618,6 +621,7 @@ devices:
   
   
     Equivalent formats (for reference):
+
     | CamillaDSP | Alsa       | Pulse     |
     |------------|------------|-----------|
     | S16LE      | S16_LE     | S16LE     |
@@ -702,6 +706,7 @@ There is also a "FreeAsync" mode as well where all parameters can be set freely.
 ```
 
 For reference, the asynchronous presets are defined according to this table:
+
 |                   | FastAsync | BalancedAsync | AccurateAsync |
 |-------------------|-----------|---------------|---------------|
 |sinc_len           | 64        | 128           | 256           |
