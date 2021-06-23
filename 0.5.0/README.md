@@ -346,6 +346,7 @@ These will __NOT__ work:
 
 ## Exit codes
 These are the exit codes CamillaDSP will give:
+
 | Exit code | Meaning |
 | --------- | ------- |
 | 0         | Normal exit, no error |
