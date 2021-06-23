@@ -614,12 +614,12 @@ devices:
 
     |            | Alsa               | Pulse              | Wasapi             | CoreAudio          | Jack               | File/Stdin/Stdout  |
     |------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-    | S16LE      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: |
-    | S24LE      | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: |
-    | S24LE3     | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: |
-    | S32LE      | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: |
-    | FLOAT32LE  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-    | FLOAT64LE  | :heavy_check_mark: | :x:                | :x:                | :x:                | :x:                | :heavy_check_mark: |
+    | S16LE      | Yes | Yes | Yes | Yes | No                | Yes |
+    | S24LE      | Yes | Yes | No                | No                | No                | Yes |
+    | S24LE3     | Yes | Yes | No                | No                | No                | Yes |
+    | S32LE      | Yes | Yes | No                | No                | No                | Yes |
+    | FLOAT32LE  | Yes | Yes | Yes | Yes | Yes | Yes |
+    | FLOAT64LE  | Yes | No                | No                | No                | No                | Yes |
   
   
     Equivalent formats (for reference):

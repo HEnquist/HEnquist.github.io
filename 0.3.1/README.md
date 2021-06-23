@@ -106,6 +106,7 @@ The easiest way to install CamillaDSP is to download a pre-built binary. Binarie
 These are compressed files containing a single executable file that is ready to run. 
 
 The following configurations are provided:
+
 | Filename | Description | Backends |
 |----------|-------------|----------|
 | `camilladsp-linux-amd64.tar.gz` | Linux on 64-bit Intel or AMD CPU | Alsa, Pulseaudio |
@@ -457,17 +458,19 @@ devices:
     * FLOAT64LE - 64 bit float, stored as eight bytes
 
   Supported formats:
+
   |            | Alsa               | Pulse              | Wasapi             | CoreAudio          |
   |------------|--------------------|--------------------|--------------------|--------------------|
-  | S16LE      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-  | S24LE      | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                |
-  | S24LE3     | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                |
-  | S32LE      | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                |
-  | FLOAT32LE  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-  | FLOAT64LE  | :heavy_check_mark: | :x:                | :x:                | :x:                |
+  | S16LE      | Yes | Yes | Yes | Yes |
+  | S24LE      | Yes | Yes | No                | No                |
+  | S24LE3     | Yes | Yes | No                | No                |
+  | S32LE      | Yes | Yes | No                | No                |
+  | FLOAT32LE  | Yes | Yes | Yes | Yes |
+  | FLOAT64LE  | Yes | No                | No                | No                |
 
 
   Equivalent formats (for reference):
+
   | CamillaDSP | Alsa       | Pulse     |
   |------------|------------|-----------|
   | S16LE      | S16_LE     | S16LE     |
@@ -531,6 +534,7 @@ There is also a "FreeAsync" mode as well where all parameters can be set freely.
 ```
 
 For reference, the asynchronous presets are defined according to this table:
+
 |                   | FastAsync | BalancedAsync | AccurateAsync |
 |-------------------|-----------|---------------|---------------|
 |sinc_len           | 64        | 128           | 256           |
