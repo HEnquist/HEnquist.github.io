@@ -1,6 +1,3 @@
-![Logo](camilladsp.svg)
-# CamillaDSP
-
 ## Published versions
 
 | Version | Date       |                                  |                                                                        |
