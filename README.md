@@ -1,14 +1,19 @@
+![Logo](camilladsp.svg)
 # CamillaDSP
 
-## Documentation for published versions
-- [Version 0.5.2](0.5.2/README.md)
-- [Version 0.5.1](0.5.1/README.md)
-- [Version 0.5.0](0.5.0/README.md)
-- [Version 0.4.2](0.4.2/README.md)
-- [Version 0.4.1](0.4.1/README.md)
-- [Version 0.4.0](0.4.0/README.md)
-- [Version 0.3.2](0.3.2/README.md)
-- [Version 0.3.1](0.3.1/README.md)
+## Published versions
+
+| Version | Date       |                                  |                                                                        |
+| ------- | ---------- | -------------------------------- | ---------------------------------------------------------------------- |
+| v0.5.2  | 2021-05-29 | [Documentation](0.5.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.2) |
+| v0.5.1  | 2021-05-11 | [Documentation](0.5.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.1) |
+| v0.5.0  | 2021-04-27 | [Documentation](0.5.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.0) |
+| v0.4.2  | 2021-01-13 | [Documentation](0.4.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.4.2) |
+| v0.4.1  | 2020-12-27 | [Documentation](0.4.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.4.1) |
+| v0.4.0  | 2020-11-19 | [Documentation](0.4.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.4.0) |
+| v0.3.2  | 2020-09-24 | [Documentation](0.3.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.3.2) |
+| v0.3.1  | 2020-07-21 | [Documentation](0.3.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.3.1) |
+
 
 ## Changelog
 
