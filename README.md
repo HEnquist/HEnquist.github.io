@@ -1,3 +1,5 @@
+![Logo](camilladsp.svg)
+
 ## Published versions
 
 | Version | Date       |                                  |                                                                        |
