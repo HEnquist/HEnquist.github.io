@@ -2,6 +2,7 @@
 
 | Version | Date       |                                  |                                                                        |
 | ------- | ---------- | -------------------------------- | ---------------------------------------------------------------------- |
+| v0.6.0  | 2021-08-11 | [Documentation](0.6.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.0) |
 | v0.5.2  | 2021-05-29 | [Documentation](0.5.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.2) |
 | v0.5.1  | 2021-05-11 | [Documentation](0.5.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.1) |
 | v0.5.0  | 2021-04-27 | [Documentation](0.5.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.0) |
@@ -13,6 +14,18 @@
 
 
 ## Changelog
+
+## 0.6.0
+New features:
+- New Wasapi backend with support for exclusive mode and loopback.
+- Do proper shutdown on SIGINT (ctrl-c).
+- Add StopReason websocket command.
+- Add GetPreviousConfig websocket command to get the previously active config.
+- Add option to stop on detected sample rate change.
+- Add support for rate adjust on the ALSA USB gadget capture device (introduced in kernel 5.14).
+
+Bugfixes:
+- Add missing token handling in .wav FIR coefficient filenames.
 
 ### 0.5.2
 New features:
