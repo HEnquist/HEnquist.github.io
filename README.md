@@ -2,6 +2,8 @@
 
 | Version | Date       |                                  |                                                                        |
 | ------- | ---------- | -------------------------------- | ---------------------------------------------------------------------- |
+| v0.6.2  | 2021-09-02 | [Documentation](0.6.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.2) |
+| v0.6.1  | 2021-08-15 | [Documentation](0.6.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.1) |
 | v0.6.0  | 2021-08-11 | [Documentation](0.6.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.0) |
 | v0.5.2  | 2021-05-29 | [Documentation](0.5.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.2) |
 | v0.5.1  | 2021-05-11 | [Documentation](0.5.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.1) |
@@ -15,7 +17,25 @@
 
 ## Changelog
 
-## 0.6.0
+### 0.6.2
+New features:
+- Updated wasapi library
+- Add FivePointPeq biquad combo
+- Support wav with extended header
+
+Bugfixes:
+- Stop properly after failing to start with bad wasapi config
+
+### 0.6.1
+New features:
+- Add lists of supported device types in help message
+
+Bugfixes:
+- Fix broken Wasapi shared mode
+- Correct "built with features" list in help.
+- Correct list of supported device types.
+
+### 0.6.0
 New features:
 - New Wasapi backend with support for exclusive mode and loopback.
 - Do proper shutdown on SIGINT (ctrl-c).
