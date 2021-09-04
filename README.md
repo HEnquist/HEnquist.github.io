@@ -2,6 +2,7 @@
 
 | Version | Date       |                                  |                                                                        |
 | ------- | ---------- | -------------------------------- | ---------------------------------------------------------------------- |
+| v0.6.3  | 2021-09-04 | [Documentation](0.6.3/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.3) |
 | v0.6.2  | 2021-09-02 | [Documentation](0.6.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.2) |
 | v0.6.1  | 2021-08-15 | [Documentation](0.6.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.1) |
 | v0.6.0  | 2021-08-11 | [Documentation](0.6.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.0) |
@@ -17,21 +18,25 @@
 
 ## Changelog
 
+### 0.6.3
+Bugfixes:
+- Fix slow start with Alsa plug devices (regression in 0.6.2).
+
 ### 0.6.2
 New features:
-- Updated wasapi library
-- Add FivePointPeq biquad combo
-- Support wav with extended header
+- Updated wasapi library.
+- Add FivePointPeq biquad combo.
+- Support wav with extended header.
 
 Bugfixes:
-- Stop properly after failing to start with bad wasapi config
+- Stop properly after failing to start with bad wasapi config.
 
 ### 0.6.1
 New features:
-- Add lists of supported device types in help message
+- Add lists of supported device types in help message.
 
 Bugfixes:
-- Fix broken Wasapi shared mode
+- Fix broken Wasapi shared mode.
 - Correct "built with features" list in help.
 - Correct list of supported device types.
 
