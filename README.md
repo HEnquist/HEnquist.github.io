@@ -2,6 +2,11 @@
 
 | Version | Date       |                                  |                                                                        |
 | ------- | ---------- | -------------------------------- | ---------------------------------------------------------------------- |
+| v2.0.0  | 2023-12-12 | [Documentation](2.0.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.0) |
+| v1.0.3  | 2022-11-10 | [Documentation](1.0.3/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.3) |
+| v1.0.2  | 2022-10-10 | [Documentation](1.0.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.2) |
+| v1.0.1  | 2022-07-21 | [Documentation](1.0.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.1) |
+| v1.0.0  | 2022-05-02 | [Documentation](1.0.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.0) |
 | v0.6.3  | 2021-09-04 | [Documentation](0.6.3/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.3) |
 | v0.6.2  | 2021-09-02 | [Documentation](0.6.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.2) |
 | v0.6.1  | 2021-08-15 | [Documentation](0.6.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.1) |
@@ -17,6 +22,67 @@
 
 
 ## Changelog
+
+### v2.0.0
+New features:
+- Add dynamic range compressor.
+- Add websocket commands to read peak and rms history.
+- Add ToggleMute websocket command.
+- Add AdjustVolume websocket command for relative volume changes.
+- Better handling of USB gadget in Alsa backend.
+- Add option to bypass pipeline steps.
+- Bluetooth capture support on Linux via Bluez.
+- Updated resampler with faster lower quality options.
+- Higher precision of biquad filters.
+- More flexible configuration of resampler type and quality.
+- Allow setting optional config parameters to `null` to use default value.
+- Add "Dummy" convolution filter type for easier CPU load testing.
+- Add title and description fields to various parts of the config.
+- Gain can be specified in dB or linear scale.
+- Websocket command to reset clipped samples counter.
+- Add an always enabled default volume control.
+- Add several volume control channels (faders).
+- Change Loudness filter to only perform loudness compensation.
+- Add more ditherers.
+- Add GeneralNotch biquad type.
+- Add Tilt equalizer biquad combo.
+- Add GraphicEqualizer biquad combo.
+- Support rate adjust for BlachHole on macOS.
+- Add statefile for persisting runtime parameters to file.
+- Websocket command to get pipeline processing capacity utilization.
+- Add commands to read statefile path and updating status.
+- Improved handling of config changes via SIGHUP and websocket.
+
+Changes:
+- Optimize cpu load in general, and of dithering and delay filters in particular.
+- More logical names for dither types.
+- Updated Shibata dither coeffients.
+- Rename `Set/GetConfigName` websocket commands to `Set/GetConfigFilePath`.
+- Removed redundant`change_format` parameter to simplify CoreAudio device config.
+
+### 1.0.3
+Bugfixes:
+ - Volume and Loudness filters keep mute state on config reload.
+
+### 1.0.2
+Bugfixes:
+ - Optimize inefficient peak and rms calculations.
+ - Switch to stable compiler for release builds, fixes memory leak in pre-built v1.0.1 binary on macOS.
+
+### 1.0.1
+Bugfixes:
+- Alsa: Avoid opening capture and playback devices at the same time since this causes trouble with some devices.
+
+### 1.0.0
+New features:
+- New improved CoreAudio backend.
+- Switch to faster logging library.
+- Improved support for Wasapi loopback capture.
+- Add "Stalled" state.
+- Some Mixer parameters made optional.
+- Delay value can be given in millimetres.
+- Improved Alsa backend.
+- Handle subnormal numbers in IIR filters (Biquad and DiffEq).
 
 ### 0.6.3
 Bugfixes:
