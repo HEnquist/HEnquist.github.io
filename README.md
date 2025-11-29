@@ -2,7 +2,12 @@
 
 | Version | Date       |                                  |                                                                        |
 | ------- | ---------- | -------------------------------- | ---------------------------------------------------------------------- |
-| v2.0.0  | 2023-12-12 | [Documentation](2.0.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.0) |
+| v3.0.1  | 2025-03-20 | [Documentation](3.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v3.0.1) |
+| v3.0.0  | 2025-01-11 | [Documentation](3.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v3.0.0) |
+| v2.0.3  | 2024-02-20 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.3) |
+| v2.0.2  | 2024-02-12 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.2) |
+| v2.0.1  | 2024-01-08 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.1) |
+| v2.0.0  | 2023-12-12 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.0) |
 | v1.0.3  | 2022-11-10 | [Documentation](1.0.3/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.3) |
 | v1.0.2  | 2022-10-10 | [Documentation](1.0.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.2) |
 | v1.0.1  | 2022-07-21 | [Documentation](1.0.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.1) |
@@ -22,6 +27,50 @@
 
 
 ## Changelog
+
+### v3.0.1
+Bugfixes:
+- Make sure that Alsa playback device resumes after pause.
+
+### v3.0.0
+New features:
+- Optional multithreaded filter processing.
+- Request higher proprity of audio threads for improved stability.
+- Add a signal generator capture device.
+- Optionally write wav header when outputting to file or stdout.
+- Add `WavFile` capture device type for reading wav files.
+- Optional limit for volume controls.
+- Add websocket command for reading all faders with a single call.
+- Linux: Subscribe to capture device control events for volume, sample rate and format changes.
+- Linux: Optionally select Alsa sample format automatically.
+- Improved controller for rate adjustment.
+- Command line options for setting aux volume and mute.
+- Optional user-defined volume limits for volume adjust commands.
+- Add noise gate.
+- Add optional channel labels for capture devices and mixers.
+- Optional log file rotation.
+Changes:
+- Remove the optional use of FFTW instead of RustFFT.
+- Rename `File` capture device to `RawFile`.
+- Filter pipeline steps take a list of channels to filter instead of a single one.
+Bugfixes:
+- Windows: Fix compatibility issues for some WASAPI devices.
+- MacOS: Support devices appearing as separate capture and playback devices.
+- Linux: Improved Alsa error handling.
+
+### v2.0.3
+Bugfixes:
+- MacOS: Fix using Aggregate devices for playback.
+
+### v2.0.2
+Bugfixes:
+- MacOS: Fix a segfault when reading clock source names for some capture devices.
+- Windows: Adjust the missed event threshold, avoids some rare stuttering.
+
+### v2.0.1
+Bugfixes:
+- Ignore capture_samplerate when resampling is disabled.
+- Increase Alsa device buffer sizes to avoid errors.
 
 ### v2.0.0
 New features:
