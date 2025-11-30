@@ -1,3 +1,31 @@
+# CamillaDSP
+CamillaDSP is a powerful and flexible open source audio processing tool,
+designed for applications like active crossovers,
+room correction, and advanced audio filtering.
+
+The CamillaDSP project encompasses:
+
+*   **CamillaDSP (the engine):** The core DSP engine, written in Rust, responsible for real-time audio processing.
+    It's a command-line application that runs on Linux, macOS, and Windows.
+    It can be used stand-alone, or together with the GUI and other related projects.
+*   **CamillaDSP (the ecosystem):** A broader family of related projects, including:
+    *   **[CamillaGUI](https://github.com/HEnquist/camillagui-backend):**
+        A user-friendly web-based interface for configuring and controlling the CamillaDSP engine.
+    *   **[camilladsp-setupscripts](https://github.com/HEnquist/camilladsp-setupscripts):**
+        Automated setup scripts.
+    *   **[pyCamillaDSP](https://github.com/HEnquist/pycamilladsp):**
+        A Python library for interacting with the CamillaDSP engine via its websocket interface.
+    *   **[pyCamillaDSP-plot](https://github.com/HEnquist/pycamilladsp-plot):**
+        A Python library for visualizing CamillaDSP configurations and filter responses.
+    *   **[camilladsp-config](https://github.com/HEnquist/camilladsp-config):**
+        A repository of example configurations and scripts for common use cases.
+    *   **[camilladsp-controller](https://github.com/HEnquist/camilladsp-controller):**
+        A controller for automatic sample rate switching.
+
+This page lists all releases of the CamillaDSP engine,
+together with the corresponding documentation.
+The source code is available in the [CamillaDSP repository](https://github.com/HEnquist/camilladsp).
+
 ## Published versions
 
 | Version | Date       |                                  |                                                                        |
