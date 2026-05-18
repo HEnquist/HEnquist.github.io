@@ -1,3 +1,7 @@
+---
+weight: 10
+---
+
 # CamillaDSP v0.6.0
 ![CI test and lint](https://github.com/HEnquist/camilladsp/workflows/CI%20test%20and%20lint/badge.svg)
 
