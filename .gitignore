@@ -2,6 +2,9 @@
 public/
 .hugo_build.lock
 
+# Hugo module vendor directory
+_vendor/
+
 # Jekyll build output
 _site/
 
