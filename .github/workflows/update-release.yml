@@ -75,8 +75,11 @@ jobs:
         env:
           FOLDER: ${{ steps.info.outputs.folder }}
         run: |
-          mkdir -p "$FOLDER"
-          find _source -maxdepth 1 \( -name "*.md" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "LICENSE.txt" \) -exec cp {} "$FOLDER/" \;
+          mkdir -p "content/docs/$FOLDER"
+          find _source -maxdepth 1 \( -name "*.md" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "LICENSE.txt" \) -exec cp {} "content/docs/$FOLDER/" \;
+          if [ -f "content/docs/$FOLDER/README.md" ]; then
+            mv "content/docs/$FOLDER/README.md" "content/docs/$FOLDER/_index.md"
+          fi
           rm -rf _source
 
       - name: Update releases table

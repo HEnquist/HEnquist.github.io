@@ -1,4 +1,4 @@
-"""Insert a new row into the releases table in releases.md and update _data/versions.yml."""
+"""Update content/releases.md and data/versions.yaml for a new release."""
 import os
 import re
 import sys
@@ -7,16 +7,17 @@ tag = os.environ["TAG"]
 folder = os.environ["FOLDER"]
 date = os.environ["DATE"]
 
-# Update releases.md
-with open("releases.md") as f:
+# Update content/releases.md
+releases_path = "content/releases.md"
+with open(releases_path) as f:
     content = f.read()
 
 if tag in content:
-    print(f"Tag {tag} already present, skipping releases.md")
+    print(f"Tag {tag} already present in releases.md, skipping")
 else:
     new_row = (
         f"| {tag}  | {date} | "
-        f"[Documentation]({folder}/README.md) | "
+        f"[Documentation](/docs/{folder}/) | "
         f"[Download](https://github.com/HEnquist/camilladsp/releases/tag/{tag}) |"
     )
 
@@ -29,22 +30,21 @@ else:
                 lines.insert(i + 1, new_row)
                 break
 
-    with open("releases.md", "w") as f:
+    with open(releases_path, "w") as f:
         f.write("\n".join(lines))
-    print(f"Inserted row for {tag}")
+    print(f"Inserted row for {tag} in releases.md")
 
-# Update _data/versions.yml — prepend the new version folder if not already listed
-versions_path = "_data/versions.yml"
+# Update data/versions.yaml
+versions_path = "data/versions.yaml"
 with open(versions_path) as f:
     versions_content = f.read()
 
-version = tag.lstrip("v")
-label = folder  # e.g. "3.0.x" or "3.1.0"
+label = folder
 
 if f'folder: "{folder}"' in versions_content:
-    print(f"Version folder {folder} already in versions.yml, skipping")
+    print(f"Version folder {folder} already in versions.yaml, skipping")
 else:
     new_entry = f'- label: "{label}"\n  folder: "{folder}"\n'
     with open(versions_path, "w") as f:
         f.write(new_entry + versions_content)
-    print(f"Prepended {folder} to versions.yml")
+    print(f"Prepended {folder} to versions.yaml")

@@ -1,4 +1,4 @@
-"""Create a _posts/ news entry from a GitHub release."""
+"""Create a content/news/ post from a GitHub release."""
 import os
 import sys
 
@@ -8,7 +8,7 @@ date = os.environ["DATE"]
 folder = os.environ["FOLDER"]
 
 slug = version.replace(".", "-")
-post_path = f"_posts/{date}-v{slug}-release.md"
+post_path = f"content/news/{date}-v{slug}-release.md"
 
 if os.path.exists(post_path):
     print(f"{post_path} already exists, skipping")
@@ -22,11 +22,9 @@ lines = [
     sep,
     f'title: "CamillaDSP {tag} released"',
     f"date: {date}",
-    "categories: [release]",
     sep,
     "",
-    f"[Download {tag}](https://github.com/HEnquist/camilladsp/releases/tag/{tag}){{: .btn .btn--primary}}",
-    f"[Documentation](/{folder}/){{: .btn .btn--inverse}}",
+    f"[Download {tag}](https://github.com/HEnquist/camilladsp/releases/tag/{tag}) &nbsp;·&nbsp; [Documentation](/docs/{folder}/)",
     "",
     notes,
     "",

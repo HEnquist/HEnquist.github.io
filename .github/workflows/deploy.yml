@@ -19,20 +19,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
 
       - uses: actions/configure-pages@v5
 
       - name: Build
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
+        run: hugo --minify
 
       - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
 
   deploy:
     environment:
