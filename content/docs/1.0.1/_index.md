@@ -1,5 +1,5 @@
 ---
-weight: 5
+weight: 7
 ---
 
 # CamillaDSP v1.0.1

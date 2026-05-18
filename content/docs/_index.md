@@ -2,10 +2,8 @@
 title: Documentation
 ---
 
-Select a version from the sidebar to browse the documentation.
+Use the sidebar to browse documentation by version. Versions labeled **3.0.x**
+or **2.0.x** contain the documentation for the latest release in that series —
+so 3.0.x always reflects the most recent 3.0 release. Earlier individual releases
+are also available in the sidebar but are not updated.
 
-| Version | Notes |
-|---------|-------|
-| [3.0.x](/docs/3.0.x/) | Latest |
-| [2.0.x](/docs/2.0.x/) | |
-| [1.0.3](/docs/1.0.3/) | |

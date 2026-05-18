@@ -63,6 +63,7 @@ jobs:
           MINOR=$(echo "$VERSION" | cut -d. -f2)
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "folder=${MAJOR}.${MINOR}.x" >> "$GITHUB_OUTPUT"
+          echo "weight=$(( -(MAJOR * 100 + MINOR) ))" >> "$GITHUB_OUTPUT"
 
       - name: Checkout camilladsp at tag
         uses: actions/checkout@v4
@@ -74,12 +75,12 @@ jobs:
       - name: Copy docs to version folder
         env:
           FOLDER: ${{ steps.info.outputs.folder }}
+          WEIGHT: ${{ steps.info.outputs.weight }}
         run: |
           mkdir -p "content/docs/$FOLDER"
           find _source -maxdepth 1 \( -name "*.md" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "LICENSE.txt" \) -exec cp {} "content/docs/$FOLDER/" \;
           if [ -f "content/docs/$FOLDER/README.md" ]; then
-            # Prepend weight: 1 so new versions sort to the top of the sidebar
-            printf -- '---\nweight: 1\n---\n\n' | cat - "content/docs/$FOLDER/README.md" > /tmp/index_tmp.md
+            printf -- "---\nweight: $WEIGHT\n---\n\n" | cat - "content/docs/$FOLDER/README.md" > /tmp/index_tmp.md
             mv /tmp/index_tmp.md "content/docs/$FOLDER/_index.md"
             rm "content/docs/$FOLDER/README.md"
           fi
