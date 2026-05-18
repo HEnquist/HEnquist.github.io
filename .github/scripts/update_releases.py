@@ -1,4 +1,4 @@
-"""Update content/releases.md and data/versions.yaml for a new release."""
+"""Update content/releases.md for a new release."""
 import os
 import re
 import sys
@@ -33,18 +33,3 @@ else:
     with open(releases_path, "w") as f:
         f.write("\n".join(lines))
     print(f"Inserted row for {tag} in releases.md")
-
-# Update data/versions.yaml
-versions_path = "data/versions.yaml"
-with open(versions_path) as f:
-    versions_content = f.read()
-
-label = folder
-
-if f'folder: "{folder}"' in versions_content:
-    print(f"Version folder {folder} already in versions.yaml, skipping")
-else:
-    new_entry = f'- label: "{label}"\n  folder: "{folder}"\n'
-    with open(versions_path, "w") as f:
-        f.write(new_entry + versions_content)
-    print(f"Prepended {folder} to versions.yaml")
