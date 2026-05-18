@@ -1,0 +1,103 @@
+name: Update docs for new release
+
+# Triggered automatically via repository_dispatch from the camilladsp repo,
+# or manually via workflow_dispatch.
+#
+# To enable automatic triggering, add the following workflow to the camilladsp
+# repo at .github/workflows/notify-website.yml, and store a PAT with repo scope
+# in the camilladsp repo secret named WEBSITE_DISPATCH_TOKEN:
+#
+#   name: Notify website of new release
+#   on:
+#     release:
+#       types: [published]
+#   jobs:
+#     dispatch:
+#       runs-on: ubuntu-latest
+#       steps:
+#         - name: Trigger website update
+#           run: |
+#             curl -X POST \
+#               -H "Authorization: token ${{ secrets.WEBSITE_DISPATCH_TOKEN }}" \
+#               -H "Accept: application/vnd.github.v3+json" \
+#               https://api.github.com/repos/HEnquist/HEnquist.github.io/dispatches \
+#               -d '{"event_type":"camilladsp-release","client_payload":{"tag":"${{ github.event.release.tag_name }}"}}'
+
+on:
+  repository_dispatch:
+    types: [camilladsp-release]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g. v3.0.2)"
+        required: true
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Resolve release info
+        id: info
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            TAG="${{ github.event.client_payload.tag }}"
+          else
+            TAG="${{ inputs.tag }}"
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+          RELEASE=$(curl -fsSL "https://api.github.com/repos/HEnquist/camilladsp/releases/tags/$TAG")
+          DATE=$(echo "$RELEASE" | python3 -c "import sys,json; print(json.load(sys.stdin)['published_at'][:10])")
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+          echo "$RELEASE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('body') or '')" > /tmp/release_notes.md
+
+          VERSION="${TAG#v}"
+          MAJOR=$(echo "$VERSION" | cut -d. -f1)
+          MINOR=$(echo "$VERSION" | cut -d. -f2)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "folder=${MAJOR}.${MINOR}.x" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout camilladsp at tag
+        uses: actions/checkout@v4
+        with:
+          repository: HEnquist/camilladsp
+          ref: ${{ steps.info.outputs.tag }}
+          path: _source
+
+      - name: Copy docs to version folder
+        env:
+          FOLDER: ${{ steps.info.outputs.folder }}
+        run: |
+          mkdir -p "$FOLDER"
+          find _source -maxdepth 1 \( -name "*.md" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "LICENSE.txt" \) -exec cp {} "$FOLDER/" \;
+          rm -rf _source
+
+      - name: Update releases table
+        env:
+          TAG: ${{ steps.info.outputs.tag }}
+          FOLDER: ${{ steps.info.outputs.folder }}
+          DATE: ${{ steps.info.outputs.date }}
+        run: python3 .github/scripts/update_releases.py
+
+      - name: Create news post
+        env:
+          TAG: ${{ steps.info.outputs.tag }}
+          VERSION: ${{ steps.info.outputs.version }}
+          DATE: ${{ steps.info.outputs.date }}
+          FOLDER: ${{ steps.info.outputs.folder }}
+        run: python3 .github/scripts/create_post.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "Add docs and release notes for ${{ steps.info.outputs.tag }}"
+          git push

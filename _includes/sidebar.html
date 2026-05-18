@@ -1,0 +1,30 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign _sb_parts = page.url | split: '/' %}
+{% assign _sb_segment = _sb_parts[1] %}
+{% assign _sb_versioned = false %}
+{% for _v in site.data.versions %}
+  {% if _sb_segment == _v.folder %}
+    {% assign _sb_versioned = true %}
+  {% endif %}
+{% endfor %}
+
+{% if page.author_profile or layout.author_profile or page.sidebar or _sb_versioned %}
+  <div class="sidebar sticky">
+    {% if page.author_profile or layout.author_profile %}{% include author-profile.html locale=locale %}{% endif %}
+    {% if _sb_versioned %}{% include version-selector.html %}{% endif %}
+    {% if page.sidebar %}
+      {% for s in page.sidebar %}
+        {% if s.image %}
+          <img src="{{ s.image | relative_url }}"
+               alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+        {% endif %}
+        {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+        {% if s.text %}{{ s.text | markdownify }}{% endif %}
+        {% if s.nav %}{% include nav_list locale=locale nav=s.nav %}{% endif %}
+      {% endfor %}
+      {% if page.sidebar.nav %}
+        {% include nav_list locale=locale nav=page.sidebar.nav %}
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}

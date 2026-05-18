@@ -1,0 +1,34 @@
+---
+title: Releases
+layout: single
+---
+
+All releases of the CamillaDSP engine, with links to documentation and downloads.
+Source code is in the [CamillaDSP repository](https://github.com/HEnquist/camilladsp).
+
+## Published versions
+
+| Version | Date       |                                  |                                                                        |
+| ------- | ---------- | -------------------------------- | ---------------------------------------------------------------------- |
+| v3.0.1  | 2025-03-20 | [Documentation](3.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v3.0.1) |
+| v3.0.0  | 2025-01-11 | [Documentation](3.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v3.0.0) |
+| v2.0.3  | 2024-02-20 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.3) |
+| v2.0.2  | 2024-02-12 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.2) |
+| v2.0.1  | 2024-01-08 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.1) |
+| v2.0.0  | 2023-12-12 | [Documentation](2.0.x/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v2.0.0) |
+| v1.0.3  | 2022-11-10 | [Documentation](1.0.3/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.3) |
+| v1.0.2  | 2022-10-10 | [Documentation](1.0.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.2) |
+| v1.0.1  | 2022-07-21 | [Documentation](1.0.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.1) |
+| v1.0.0  | 2022-05-02 | [Documentation](1.0.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v1.0.0) |
+| v0.6.3  | 2021-09-04 | [Documentation](0.6.3/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.3) |
+| v0.6.2  | 2021-09-02 | [Documentation](0.6.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.2) |
+| v0.6.1  | 2021-08-15 | [Documentation](0.6.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.1) |
+| v0.6.0  | 2021-08-11 | [Documentation](0.6.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.6.0) |
+| v0.5.2  | 2021-05-29 | [Documentation](0.5.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.2) |
+| v0.5.1  | 2021-05-11 | [Documentation](0.5.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.1) |
+| v0.5.0  | 2021-04-27 | [Documentation](0.5.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.5.0) |
+| v0.4.2  | 2021-01-13 | [Documentation](0.4.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.4.2) |
+| v0.4.1  | 2020-12-27 | [Documentation](0.4.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.4.1) |
+| v0.4.0  | 2020-11-19 | [Documentation](0.4.0/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.4.0) |
+| v0.3.2  | 2020-09-24 | [Documentation](0.3.2/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.3.2) |
+| v0.3.1  | 2020-07-21 | [Documentation](0.3.1/README.md) | [Download](https://github.com/HEnquist/camilladsp/releases/tag/v0.3.1) |

@@ -1,0 +1,10 @@
+{% assign _vs_parts = page.url | split: '/' %}
+{% assign _vs_current = _vs_parts[1] %}
+<div class="version-selector">
+  <label class="version-selector__label" for="version-select">Version</label>
+  <select id="version-select" class="version-selector__select" onchange="navigateVersion(this.value)">
+    {% for v in site.data.versions %}
+      <option value="{{ v.folder }}"{% if _vs_current == v.folder %} selected{% endif %}>{{ v.label }}</option>
+    {% endfor %}
+  </select>
+</div>

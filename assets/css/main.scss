@@ -1,0 +1,76 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@import "minimal-mistakes/skins/dark";
+@import "minimal-mistakes";
+
+.version-selector {
+  margin-bottom: 1.5em;
+
+  &__label {
+    display: block;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8b949e;
+    margin-bottom: 0.4em;
+  }
+
+  &__select {
+    width: 100%;
+    padding: 0.4em 0.6em;
+    background-color: #161b22;
+    color: #cdd9e5;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    font-size: 0.85em;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: #58a6ff;
+    }
+  }
+}
+
+.layout--splash {
+  .site-logo,
+  .site-title {
+    display: none;
+  }
+}
+
+.splash-hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0d1117;
+  text-align: center;
+  padding: 4em 2em;
+
+  &__logo {
+    width: 300px;
+    max-width: 65%;
+    display: block;
+    margin: 0 auto 1.5em;
+  }
+
+  &__intro {
+    max-width: 640px;
+    margin: 0 auto 2em;
+    font-size: 1.1em;
+    color: #cdd9e5;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  &__buttons {
+    text-align: center;
+
+    .btn {
+      margin: 0.25em;
+    }
+  }
+}
