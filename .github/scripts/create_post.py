@@ -24,7 +24,7 @@ lines = [
     f"date: {date}",
     sep,
     "",
-    f"[Download {tag}](https://github.com/HEnquist/camilladsp/releases/tag/{tag}) &nbsp;·&nbsp; [Documentation](/docs/{folder}/)",
+    f"[Download {tag}](https://github.com/HEnquist/camilladsp/releases/tag/{tag}) &nbsp;·&nbsp; [Documentation](/docs/camilladsp/{folder}/)",
     "",
     notes,
     "",

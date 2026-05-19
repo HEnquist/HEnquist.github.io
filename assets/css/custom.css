@@ -1,0 +1,22 @@
+/* The hextra-home layout doesn't wrap content in the .content prose class,
+   so plain links in home page text are unstyled. Apply the same link style
+   that prose content uses. */
+main p a {
+  color: var(--hx-color-primary-600);
+  text-decoration-line: underline;
+  text-decoration-thickness: from-font;
+}
+
+/* On desktop, replace auto-fill card sizing with equal-width columns.
+   This makes cards fill the full container width and keeps column edges
+   aligned across separate card blocks on the same page. */
+@media (min-width: 768px) {
+  .hextra-cards {
+    grid-template-columns: repeat(var(--hextra-cards-grid-cols), 1fr);
+  }
+}
+
+/* Extra breathing room between sections. */
+.hextra-cards {
+  margin-bottom: 2rem;
+}

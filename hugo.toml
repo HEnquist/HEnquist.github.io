@@ -29,6 +29,9 @@ enableGitInfo = true
     displayCopyright = false
     displayPoweredBy = false
 
+  [params.theme]
+    displayToggle = false
+
   [params.search]
     enable = true
 
