@@ -26,13 +26,13 @@ echo "Tag: $TAG  Date: $DATE  Folder: $FOLDER  Weight: $WEIGHT"
 echo "Cloning camilladsp at $TAG..."
 git clone --depth 1 --branch "$TAG" https://github.com/HEnquist/camilladsp.git _source
 
-echo "Copying docs to content/docs/$FOLDER/..."
-mkdir -p "content/docs/$FOLDER"
-find _source -maxdepth 1 \( -name "*.md" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "LICENSE.txt" \) -exec cp {} "content/docs/$FOLDER/" \;
-if [ -f "content/docs/$FOLDER/README.md" ]; then
-  printf -- "---\nweight: $WEIGHT\n---\n\n" | cat - "content/docs/$FOLDER/README.md" > /tmp/index_tmp.md
-  mv /tmp/index_tmp.md "content/docs/$FOLDER/_index.md"
-  rm "content/docs/$FOLDER/README.md"
+echo "Copying docs to content/docs/camilladsp/$FOLDER/..."
+mkdir -p "content/docs/camilladsp/$FOLDER"
+find _source -maxdepth 1 \( -name "*.md" -o -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "LICENSE*.txt" \) -exec cp {} "content/docs/camilladsp/$FOLDER/" \;
+if [ -f "content/docs/camilladsp/$FOLDER/README.md" ]; then
+  printf -- "---\nweight: $WEIGHT\n---\n\n" | cat - "content/docs/camilladsp/$FOLDER/README.md" > /tmp/index_tmp.md
+  mv /tmp/index_tmp.md "content/docs/camilladsp/$FOLDER/_index.md"
+  rm "content/docs/camilladsp/$FOLDER/README.md"
 fi
 rm -rf _source
 

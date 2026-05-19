@@ -17,7 +17,7 @@ if tag in content:
 else:
     new_row = (
         f"| {tag}  | {date} | "
-        f"[Documentation](/docs/{folder}/) | "
+        f"[Documentation](/docs/camilladsp/{folder}/) | "
         f"[Download](https://github.com/HEnquist/camilladsp/releases/tag/{tag}) |"
     )
 
