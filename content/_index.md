@@ -23,9 +23,9 @@ layout: hextra-home
 ## What you can do
 
 {{< cards >}}
-  {{< card title="Active crossovers" subtitle="Split a signal into frequency bands and route each to a separate amplifier and driver, with precise slopes and time alignment." >}}
-  {{< card title="Room correction" subtitle="Apply FIR correction filters to compensate for acoustic problems, combined with EQ and delay adjustment." >}}
-  {{< card title="Advanced DSP" subtitle="Mix channels, add resampling, apply dynamic loudness, and chain dozens of filter stages in a flexible real-time pipeline." >}}
+  {{< card link="/examples/active-crossovers/" title="Active crossovers" subtitle="Split a signal into frequency bands and route each to a separate amplifier and driver, with precise slopes and time alignment." >}}
+  {{< card link="/examples/room-correction/" title="Room correction" subtitle="Apply FIR correction filters to compensate for acoustic problems, combined with EQ and delay adjustment." >}}
+  {{< card link="/examples/advanced-dsp/" title="Advanced DSP" subtitle="Mix channels, add resampling, apply dynamic loudness, and chain dozens of filter stages in a flexible real-time pipeline." >}}
 {{< /cards >}}
 
 ## The tools
