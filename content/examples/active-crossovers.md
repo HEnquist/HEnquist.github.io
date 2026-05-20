@@ -2,6 +2,8 @@
 title: Active crossovers
 ---
 
+[← Examples](/examples/)
+
 A traditional passive crossover sits between the amplifier and the speakers, splitting the signal
 with capacitors and inductors. An active crossover does the same split in the digital domain,
 before amplification — one amplifier channel per driver. This gives much better control over the

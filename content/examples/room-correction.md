@@ -2,6 +2,8 @@
 title: Room correction
 ---
 
+[← Examples](/examples/)
+
 Every room colors the sound reaching your ears. Reflections, resonances, and standing waves add
 peaks and dips to the frequency response that have nothing to do with the recording. Room
 correction measures these anomalies and applies inverse filters to cancel them out.

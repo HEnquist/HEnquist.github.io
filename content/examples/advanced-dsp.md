@@ -2,6 +2,8 @@
 title: Advanced DSP
 ---
 
+[← Examples](/examples/)
+
 Filters, mixers, and processors can be chained in any order, applied per channel, and combined
 freely. A few examples of what that makes possible:
 
