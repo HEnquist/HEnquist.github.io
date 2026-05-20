@@ -3,7 +3,8 @@ title: CamillaGUI
 weight: 2
 ---
 
-CamillaGUI is a web-based interface for CamillaDSP. It runs a small backend server locally and serves the UI to your browser — no internet connection required.
+CamillaGUI is a web-based interface for CamillaDSP. It runs a small backend server locally and
+serves the UI to your browser — no internet connection required.
 
 A live demo is available at [camilladsp.com/camillagui/](https://www.camilladsp.com/camillagui/).
 
@@ -17,7 +18,8 @@ A live demo is available at [camilladsp.com/camillagui/](https://www.camilladsp.
 
 The GUI has two parts:
 
-- **Backend** — a Python server that communicates with CamillaDSP over its WebSocket API, and serves the frontend to the browser
+- **Backend** — a Python server that communicates with CamillaDSP over its WebSocket API, and
+  serves the frontend to the browser
 - **Frontend** — a React app that runs entirely in the browser
 
 The two parts are distributed together. See [Installation](installation) for how to get them running.
