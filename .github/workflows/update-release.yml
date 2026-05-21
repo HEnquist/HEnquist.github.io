@@ -40,7 +40,7 @@ jobs:
 
     steps:
       - name: Checkout website
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Resolve release info
         id: info
@@ -66,7 +66,7 @@ jobs:
           echo "weight=$(( -(MAJOR * 100 + MINOR) ))" >> "$GITHUB_OUTPUT"
 
       - name: Checkout camilladsp at tag
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: HEnquist/camilladsp
           ref: ${{ steps.info.outputs.tag }}
