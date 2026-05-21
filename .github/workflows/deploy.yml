@@ -38,6 +38,9 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: Check links
+        run: python3 .github/scripts/check_links.py
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
